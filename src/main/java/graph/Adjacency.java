@@ -33,7 +33,6 @@ public class Adjacency<T> implements IAdjacency<T> {
     }
 
     @Override
-    @Deprecated
     public void setVertex(IVertex<T> vertex) {
         this.vertex = vertex;
     }

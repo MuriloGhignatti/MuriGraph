@@ -1,6 +1,10 @@
 package interfaces;
 
+import exceptions.AdjacencyAlreadyExistsException;
+import exceptions.NoSuchAdjacencyException;
+
 import java.util.Collection;
+import java.util.Map;
 
 public interface IVertex<T>{
 
@@ -9,14 +13,15 @@ public interface IVertex<T>{
     void setLabel(String label);
 
     //Getters section
+    Collection<IAdjacency<T>> getAdjacencies();
+    Map<T, IAdjacency<T>> getMapAdjacencies();
     T getInformation();
     String getLabel();
-    Collection<IAdjacency<T>> getAdjacencies();
 
     //Edges section
     void addAdjacency(T info, IAdjacency<T> adjacency);
-    void addAdjacency(IAdjacency<T> adjacency);
-    void addAdjacency(IVertex<T> vertex);
+    void addAdjacency(IAdjacency<T> adjacency) throws AdjacencyAlreadyExistsException;
+    void addAdjacency(IVertex<T> vertex) throws AdjacencyAlreadyExistsException;
 
     boolean existAdjacency(IAdjacency<T> adjacency);
     boolean existAdjacency(IVertex<T> vertex);
@@ -24,8 +29,8 @@ public interface IVertex<T>{
 
     boolean hasAnyAdjacency();
 
-    void removeAdjacency(IAdjacency<T> adjacency);
-    void removeAdjacency(IVertex<T> vertex);
-    void removeAdjacency(T info);
+    void removeAdjacency(IAdjacency<T> adjacency) throws NoSuchAdjacencyException;
+    void removeAdjacency(IVertex<T> vertex) throws NoSuchAdjacencyException;
+    void removeAdjacency(T info) throws NoSuchAdjacencyException;
 
 }

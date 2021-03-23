@@ -1,5 +1,7 @@
 package graph;
 
+import exceptions.AdjacencyAlreadyExistsException;
+import exceptions.NoSuchAdjacencyException;
 import exceptions.NoSuchVertexException;
 import exceptions.VertexAlreadyExistsException;
 import interfaces.IAdjacency;
@@ -83,7 +85,7 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void addNode(T information) throws VertexAlreadyExistsException {
+    public void addVertex(T information) throws VertexAlreadyExistsException {
         if(existVertex(information)){
             StringBuilder errorMessageStringBuilder = new StringBuilder("Vertex ");
             errorMessageStringBuilder.append(information);
@@ -94,7 +96,7 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void addNode(IVertex<T> vertex) throws VertexAlreadyExistsException {
+    public void addVertex(IVertex<T> vertex) throws VertexAlreadyExistsException {
         if(existVertex(vertex)){
             StringBuilder errorMessageStringBuilder = new StringBuilder("Vertex ");
             errorMessageStringBuilder.append(vertex.getInformation());
@@ -117,7 +119,7 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         if(!existVertex(sourceVertex) || !existVertex(destinationVertex)){
             StringBuilder errorMessageStringBuilder = new StringBuilder();
             if(!existVertex(sourceVertex) && !existVertex(destinationVertex))
@@ -127,81 +129,81 @@ public class Graph<T> implements IGraph<T> {
             errorMessageStringBuilder.append("doesn't exist on the graph");
             throw new NoSuchVertexException(errorMessageStringBuilder.toString());
         }
-        getVertex(sourceVertex).addAdjacency(new Adjacency<T>(label, getVertex(destinationVertex), weight));
+        getVertex(sourceVertex).addAdjacency(new Adjacency<>(label, getVertex(destinationVertex), weight));
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, T destinationVertex, String label) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, T destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, label, 0.0);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, weight);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, 0.0);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex.getInformation(), destinationVertex.getInformation(), label, weight);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, String label) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, label, 0.0);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, weight);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, 0.0);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex.getInformation(), label, weight);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, label, 0.0);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, weight);
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException {
+    public void createAdjacency(T sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, 0.0);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex.getInformation(), destinationVertex, label, weight);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, label, 0.0);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, weight);
     }
 
     @Override
-    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex) throws NoSuchVertexException {
+    public void createAdjacency(IVertex<T> sourceVertex, T destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
         createAdjacency(sourceVertex, destinationVertex, null, 0.0);
     }
 
@@ -288,7 +290,7 @@ public class Graph<T> implements IGraph<T> {
             id = 1000;
             for (IVertex<T> currentVertex : localVertexes) {
                 if (currentVertex.hasAnyAdjacency())
-                    for (IAdjacency currentAdjacency : currentVertex.getAdjacencies()) {
+                    for (IAdjacency<T> currentAdjacency : currentVertex.getAdjacencies()) {
                         bufferedWriter.write(formatEdgeGraphmlString(verticesIds.get(currentVertex.getInformation().toString()), verticesIds.get(currentAdjacency.getInformation().toString()), weighted, currentAdjacency.getWeight(), weighted, id++, "", ""));
                         bufferedWriter.newLine();
                     }
@@ -354,26 +356,26 @@ public class Graph<T> implements IGraph<T> {
 
     @Override
     public void removeNode(IVertex<T> vertex) throws NoSuchVertexException{
-        removeNode(getVertex(vertex.getInformation()));
+        removeNode(vertex.getInformation());
     }
 
     @Override
-    public void removeAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException {
-
+    public void removeAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException {
+        getVertex(sourceVertex).removeAdjacency(destinationVertex);
     }
 
     @Override
-    public void removeAdjacency(T sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException {
-
+    public void removeAdjacency(T sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException {
+        removeAdjacency(sourceVertex, destinationVertex.getInformation());
     }
 
     @Override
-    public void removeAdjacency(IVertex<T> sourceVertex, T destinationVertex) throws NoSuchVertexException {
-
+    public void removeAdjacency(IVertex<T> sourceVertex, T destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException {
+        removeAdjacency(sourceVertex.getInformation(), destinationVertex);
     }
 
     @Override
-    public void removeAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException {
-
+    public void removeAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException {
+        removeAdjacency(sourceVertex.getInformation(), destinationVertex.getInformation());
     }
 }
