@@ -130,6 +130,8 @@ public class Graph<T> implements IGraph<T> {
             throw new NoSuchVertexException(errorMessageStringBuilder.toString());
         }
         getVertex(sourceVertex).addAdjacency(new Adjacency<>(label, getVertex(destinationVertex), weight));
+        if(!directed)
+            getVertex(destinationVertex).addAdjacency(new Adjacency<>(label, getVertex(sourceVertex), weight));
     }
 
     @Override
@@ -214,7 +216,7 @@ public class Graph<T> implements IGraph<T> {
 
     @Override
     public boolean existVertex(IVertex<T> vertex) {
-        return vertexes.containsKey(vertex.getInformation());
+        return existVertex(vertex.getInformation());
     }
 
     //TODO Study a better implementation for this
@@ -344,7 +346,7 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void removeNode(T information) throws NoSuchVertexException{
+    public void removeVertex(T information) throws NoSuchVertexException{
         if(!existVertex(information)){
             StringBuilder errorMessageStringBuilder = new StringBuilder("Vertex ");
             errorMessageStringBuilder.append(information);
@@ -355,8 +357,8 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void removeNode(IVertex<T> vertex) throws NoSuchVertexException{
-        removeNode(vertex.getInformation());
+    public void removeVertex(IVertex<T> vertex) throws NoSuchVertexException{
+        removeVertex(vertex.getInformation());
     }
 
     @Override
@@ -377,5 +379,53 @@ public class Graph<T> implements IGraph<T> {
     @Override
     public void removeAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException {
         removeAdjacency(sourceVertex.getInformation(), destinationVertex.getInformation());
+    }
+
+    @Override
+    public void searchDepth(T information) throws NoSuchVertexException {
+        searchDepth(getVertex(information));
+    }
+
+    @Override
+    public void searchDepth(IVertex<T> sourceVertex) {
+        Set<T> visited = new HashSet<>();
+        searchDepth(sourceVertex, visited);
+    }
+
+    private void searchDepth(IVertex<T> sourceVertex, Set<T> visited){
+        visited.add(sourceVertex.getInformation());
+        System.out.println(sourceVertex.getInformation());
+        for(IAdjacency<T> adjacency: sourceVertex.getAdjacencies()){
+            if(!visited.contains(adjacency.getInformation()))
+                searchDepth(adjacency.getVertex(), visited);
+        }
+    }
+
+    @Override
+    public void searchWidth(T information) throws NoSuchVertexException {
+        searchWidth(getVertex(information));
+    }
+
+    @Override
+    public void searchWidth(IVertex<T> sourceVertex) {
+        Queue<IVertex<T>> linkedList = new LinkedList<>();
+        Set<T> visited = new HashSet<>();
+
+        visited.add(sourceVertex.getInformation());
+        linkedList.add(sourceVertex);
+        IVertex<T> currentVertex;
+        while(!linkedList.isEmpty()){
+            currentVertex = linkedList.poll();
+            if(currentVertex.hasAnyAdjacency()){
+                for(IAdjacency<T> currentAdjacency: currentVertex.getAdjacencies()){
+                    if(!visited.contains(currentAdjacency.getInformation())){
+                        visited.add(currentAdjacency.getInformation());
+                        System.out.println(currentAdjacency.getInformation());
+                        linkedList.add(currentAdjacency.getVertex());
+                    }
+                }
+                linkedList.poll();
+            }
+        }
     }
 }

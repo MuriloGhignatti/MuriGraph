@@ -7,7 +7,7 @@ import graph.Vertex;
 public class Main {
     public static void main(String[] args) throws VertexAlreadyExistsException, AdjacencyAlreadyExistsException,
             NoSuchVertexException {
-        Graph<String> graph = new Graph<>(true, true);
+        Graph<String> graph = new Graph<>(false, true);
 
         graph.addVertex("Doutor Ulysses");
         graph.addVertex("Cerro Azul");
@@ -98,5 +98,10 @@ public class Main {
         graph.createAdjacency("Agudos do Sul",          "Tijucas do Sul",           19.6);
 
         System.out.println(graph.getVertexesSize());
+
+        System.out.println("Search Width: ");
+        graph.searchWidth("Curitiba");
+        System.out.println("Search Depth: ");
+        graph.searchDepth("Curitiba");
     }
 }

@@ -80,9 +80,9 @@ public interface IGraph<T> {
 
     void printAdjacencies(T information) throws NoSuchVertexException;
 
-    void removeNode(T information) throws NoSuchVertexException;
+    void removeVertex(T information) throws NoSuchVertexException;
 
-    void removeNode(IVertex<T> vertex) throws NoSuchVertexException;
+    void removeVertex(IVertex<T> vertex) throws NoSuchVertexException;
 
     void removeAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException;
 
@@ -92,4 +92,11 @@ public interface IGraph<T> {
 
     void removeAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, NoSuchAdjacencyException;
 
+    void searchDepth(T information) throws NoSuchVertexException;
+
+    void searchDepth(IVertex<T> sourceVertex);
+
+    void searchWidth(T information) throws NoSuchVertexException;
+
+    void searchWidth(IVertex<T> sourceVertex);
 }
