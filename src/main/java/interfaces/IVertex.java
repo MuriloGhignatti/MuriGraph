@@ -13,7 +13,10 @@ public interface IVertex<T>{
     void setLabel(String label);
 
     //Getters section
+    IAdjacency<T> getAdjacencie(T destinationVertexInformation) throws NoSuchAdjacencyException;
+    IAdjacency<T> getAdjacencie(IVertex<T> destinationVertexInformation) throws NoSuchAdjacencyException;
     Collection<IAdjacency<T>> getAdjacencies();
+    int getAdjacenciesSize();
     Map<T, IAdjacency<T>> getMapAdjacencies();
     T getInformation();
     String getLabel();

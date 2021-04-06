@@ -6,25 +6,27 @@ import interfaces.IVertex;
 public class Adjacency<T> implements IAdjacency<T> {
 
     private String label;
-    private IVertex<T> vertex;
+    private IVertex<T> sourceVertex;
+    private IVertex<T> destinationVertex;
     private double weight;
 
-    public Adjacency(String label, IVertex<T> vertex, double weight){
+    public Adjacency(String label, IVertex<T> sourceVertex, IVertex<T> destinationVertex, double weight){
         this.label = label;
-        this.vertex = vertex;
+        this.sourceVertex = sourceVertex;
+        this.destinationVertex = destinationVertex;
         this.weight = weight;
     }
 
-    public Adjacency(String label, IVertex<T> vertex){
-        this(label, vertex, 0.0);
+    public Adjacency(String label, IVertex<T> sourceVertex, IVertex<T> destinationVertex){
+        this(label, sourceVertex, destinationVertex, 0.0);
     }
 
-    public Adjacency(IVertex<T> vertex, double weight){
-        this(null, vertex, weight);
+    public Adjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, double weight){
+        this(null, sourceVertex, destinationVertex, weight);
     }
 
-    public Adjacency(IVertex<T> vertex){
-        this(null, vertex, 0.0);
+    public Adjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex){
+        this(sourceVertex, destinationVertex, 0.0);
     }
 
     @Override
@@ -33,8 +35,8 @@ public class Adjacency<T> implements IAdjacency<T> {
     }
 
     @Override
-    public void setVertex(IVertex<T> vertex) {
-        this.vertex = vertex;
+    public void setDestinationVertex(IVertex<T> destinationVertex) {
+        this.destinationVertex = destinationVertex;
     }
 
     @Override
@@ -43,8 +45,18 @@ public class Adjacency<T> implements IAdjacency<T> {
     }
 
     @Override
-    public T getInformation() {
-        return vertex.getInformation();
+    public T getDestinationInformation() {
+        return destinationVertex.getInformation();
+    }
+
+    @Override
+    public IVertex<T> getSourceVertex() {
+        return sourceVertex;
+    }
+
+    @Override
+    public T getSourceVertexInformation() {
+        return sourceVertex.getInformation();
     }
 
     @Override
@@ -53,8 +65,8 @@ public class Adjacency<T> implements IAdjacency<T> {
     }
 
     @Override
-    public IVertex<T> getVertex() {
-        return vertex;
+    public IVertex<T> getDestinationVertex() {
+        return destinationVertex;
     }
 
     @Override

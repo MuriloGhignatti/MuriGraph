@@ -44,8 +44,30 @@ public class Vertex<T> implements IVertex<T> {
     }
 
     @Override
+    public IAdjacency<T> getAdjacencie(T destinationVertexInformation) throws NoSuchAdjacencyException {
+        if(!adjacencies.containsKey(destinationVertexInformation)){
+            StringBuilder errorMessage = new StringBuilder("Vertex ");
+            errorMessage.append(information);
+            errorMessage.append(" doesn't have any adjacency with ");
+            errorMessage.append(destinationVertexInformation);
+            throw new NoSuchAdjacencyException(errorMessage.toString());
+        }
+        return adjacencies.get(destinationVertexInformation);
+    }
+
+    @Override
+    public IAdjacency<T> getAdjacencie(IVertex<T> destinationVertexInformation) throws NoSuchAdjacencyException {
+        return getAdjacencie(destinationVertexInformation.getInformation());
+    }
+
+    @Override
     public Collection<IAdjacency<T>> getAdjacencies() {
         return adjacencies.values();
+    }
+
+    @Override
+    public int getAdjacenciesSize() {
+        return adjacencies.size();
     }
 
     @Override
@@ -67,7 +89,7 @@ public class Vertex<T> implements IVertex<T> {
     public void addAdjacency(T info, IAdjacency<T> adjacency) {
         if(adjacencies == null)
             adjacencies = new HashMap<>();
-
+        adjacencies.put(info, adjacency);
     }
 
     @Override
@@ -76,21 +98,21 @@ public class Vertex<T> implements IVertex<T> {
             adjacencies = new HashMap<>();
         if(existAdjacency(adjacency)){
             StringBuilder errorMessageStringBuilder = new StringBuilder("Adjacency with information ");
-            errorMessageStringBuilder.append(adjacency.getInformation());
+            errorMessageStringBuilder.append(adjacency.getDestinationInformation());
             errorMessageStringBuilder.append(" already exists");
             throw new AdjacencyAlreadyExistsException(errorMessageStringBuilder.toString());
         }
-        adjacencies.put(adjacency.getInformation(), adjacency);
+        adjacencies.put(adjacency.getDestinationInformation(), adjacency);
     }
 
     @Override
     public void addAdjacency(IVertex<T> vertex) throws AdjacencyAlreadyExistsException {
-        addAdjacency(new Adjacency<>(vertex));
+        addAdjacency(new Adjacency<>(this, vertex));
     }
 
     @Override
     public boolean existAdjacency(IAdjacency<T> adjacency) {
-        return existAdjacency(adjacency.getInformation());
+        return existAdjacency(adjacency.getDestinationInformation());
     }
 
     @Override
@@ -112,7 +134,7 @@ public class Vertex<T> implements IVertex<T> {
 
     @Override
     public void removeAdjacency(IAdjacency<T> adjacency) throws NoSuchAdjacencyException {
-        removeAdjacency(adjacency.getInformation());
+        removeAdjacency(adjacency.getDestinationInformation());
     }
 
     @Override

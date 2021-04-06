@@ -34,13 +34,13 @@ public interface IGraph<T> {
 
     double[][] getAdjacencyMatrix();
 
-    void createAdjacency(T sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, T destinationVertexInformation, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, T destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, T destinationVertexInformation, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, T destinationVertexInformation, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, T destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, T destinationVertexInformation) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
     void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
@@ -50,21 +50,21 @@ public interface IGraph<T> {
 
     void createAdjacency(IVertex<T> sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, IVertex<T> destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, IVertex<T> destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, IVertex<T> destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(T sourceVertex, IVertex<T> destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(T sourceVertexInformation, IVertex<T> destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(IVertex<T> sourceVertex, T destinationVertexInformation, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(IVertex<T> sourceVertex, T destinationVertexInformation, String label) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(IVertex<T> sourceVertex, T destinationVertex, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(IVertex<T> sourceVertex, T destinationVertexInformation, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
-    void createAdjacency(IVertex<T> sourceVertex, T destinationVertex) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
+    void createAdjacency(IVertex<T> sourceVertex, T destinationVertexInformation) throws NoSuchVertexException, AdjacencyAlreadyExistsException;
 
     boolean existVertex(T information);
 
@@ -95,6 +95,10 @@ public interface IGraph<T> {
     void searchDepth(T information) throws NoSuchVertexException;
 
     void searchDepth(IVertex<T> sourceVertex);
+
+    void searchIterativeDepth(T sourceVertexInformation, int maxDepth) throws NoSuchVertexException;
+
+    void searchIterativeDepth(IVertex<T> sourceVertex, int maxDepth);
 
     void searchWidth(T information) throws NoSuchVertexException;
 

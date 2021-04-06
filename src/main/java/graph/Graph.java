@@ -119,19 +119,20 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
-    public void createAdjacency(T sourceVertex, T destinationVertex, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
-        if(!existVertex(sourceVertex) || !existVertex(destinationVertex)){
+    public void createAdjacency(T sourceVertexInformation, T destinationVertexInformation, String label, double weight) throws NoSuchVertexException, AdjacencyAlreadyExistsException {
+        if(!existVertex(sourceVertexInformation) || !existVertex(destinationVertexInformation)){
             StringBuilder errorMessageStringBuilder = new StringBuilder();
-            if(!existVertex(sourceVertex) && !existVertex(destinationVertex))
-                errorMessageStringBuilder.append("Vertexes ").append(sourceVertex).append(" and ").append(destinationVertex);
+            if(!existVertex(sourceVertexInformation) && !existVertex(destinationVertexInformation))
+                errorMessageStringBuilder.append("Vertexes ").append(sourceVertexInformation).append(" and ").append(destinationVertexInformation);
             else
-                errorMessageStringBuilder.append("Vertex").append(!existVertex(sourceVertex) ? sourceVertex : destinationVertex);
+                errorMessageStringBuilder.append("Vertex").append(!existVertex(sourceVertexInformation) ? sourceVertexInformation : destinationVertexInformation);
             errorMessageStringBuilder.append("doesn't exist on the graph");
             throw new NoSuchVertexException(errorMessageStringBuilder.toString());
         }
-        getVertex(sourceVertex).addAdjacency(new Adjacency<>(label, getVertex(destinationVertex), weight));
+        IVertex<T> sourceVertex = getVertex(sourceVertexInformation);
+        sourceVertex.addAdjacency(new Adjacency<>(label, sourceVertex, getVertex(destinationVertexInformation), weight));
         if(!directed)
-            getVertex(destinationVertex).addAdjacency(new Adjacency<>(label, getVertex(sourceVertex), weight));
+            getVertex(destinationVertexInformation).addAdjacency(new Adjacency<>(label, getVertex(destinationVertexInformation), sourceVertex, weight));
     }
 
     @Override
@@ -246,7 +247,7 @@ public class Graph<T> implements IGraph<T> {
             for (IVertex<T> currentVertex : localVertexes) {
                 if (currentVertex.hasAnyAdjacency())
                     for (IAdjacency<T> currentAdjacency : currentVertex.getAdjacencies()) {
-                        bufferedWriter.write(currentVertex.getInformation() + " " + currentAdjacency.getInformation() + " " + currentAdjacency.getWeight());
+                        bufferedWriter.write(currentVertex.getInformation() + " " + currentAdjacency.getDestinationInformation() + " " + currentAdjacency.getWeight());
                         bufferedWriter.newLine();
                     }
             }
@@ -293,7 +294,7 @@ public class Graph<T> implements IGraph<T> {
             for (IVertex<T> currentVertex : localVertexes) {
                 if (currentVertex.hasAnyAdjacency())
                     for (IAdjacency<T> currentAdjacency : currentVertex.getAdjacencies()) {
-                        bufferedWriter.write(formatEdgeGraphmlString(verticesIds.get(currentVertex.getInformation().toString()), verticesIds.get(currentAdjacency.getInformation().toString()), weighted, currentAdjacency.getWeight(), weighted, id++, "", ""));
+                        bufferedWriter.write(formatEdgeGraphmlString(verticesIds.get(currentVertex.getInformation().toString()), verticesIds.get(currentAdjacency.getDestinationInformation().toString()), weighted, currentAdjacency.getWeight(), weighted, id++, "", ""));
                         bufferedWriter.newLine();
                     }
             }
@@ -337,7 +338,7 @@ public class Graph<T> implements IGraph<T> {
             System.out.println(new StringBuilder("The vertex ").append(vertex.getInformation()).append(" doesn't has any adjacency").toString());
         else
             for(IAdjacency<T> currentAdjacency: vertex.getAdjacencies())
-                System.out.println(new StringBuilder(vertex.getInformation().toString()).append("->").append(currentAdjacency.getInformation()));
+                System.out.println(new StringBuilder(vertex.getInformation().toString()).append("->").append(currentAdjacency.getDestinationInformation()));
     }
 
     @Override
@@ -387,17 +388,43 @@ public class Graph<T> implements IGraph<T> {
     }
 
     @Override
+    public void searchIterativeDepth(IVertex<T> sourceVertex, int maxDepth) {
+        Set<T> visited = new HashSet<>();
+        searchIterativeDepth(sourceVertex, 0, maxDepth, visited);
+    }
+
+    private void searchIterativeDepth(IVertex<T> sourceVertex, int currentDepth, int maxDepth, Set<T> visited){
+        visited.add(sourceVertex.getInformation());
+        if(currentDepth != maxDepth){
+            for(IAdjacency<T> adjacency: sourceVertex.getAdjacencies()){
+                if(!visited.contains(adjacency.getDestinationInformation()))
+                    searchIterativeDepth(adjacency.getDestinationVertex(), currentDepth + 1, maxDepth, visited);
+            }
+            System.out.println(sourceVertex.getInformation());
+        }
+        else if(currentDepth == maxDepth){
+            System.out.println(sourceVertex.getInformation());
+            return;
+        }
+    }
+
+    @Override
     public void searchDepth(IVertex<T> sourceVertex) {
         Set<T> visited = new HashSet<>();
         searchDepth(sourceVertex, visited);
+    }
+
+    @Override
+    public void searchIterativeDepth(T sourceVertexInformation, int maxDepth) throws NoSuchVertexException {
+        searchIterativeDepth(getVertex(sourceVertexInformation), maxDepth);
     }
 
     private void searchDepth(IVertex<T> sourceVertex, Set<T> visited){
         visited.add(sourceVertex.getInformation());
         System.out.println(sourceVertex.getInformation());
         for(IAdjacency<T> adjacency: sourceVertex.getAdjacencies()){
-            if(!visited.contains(adjacency.getInformation()))
-                searchDepth(adjacency.getVertex(), visited);
+            if(!visited.contains(adjacency.getDestinationInformation()))
+                searchDepth(adjacency.getDestinationVertex(), visited);
         }
     }
 
@@ -418,10 +445,10 @@ public class Graph<T> implements IGraph<T> {
             currentVertex = linkedList.poll();
             if(currentVertex.hasAnyAdjacency()){
                 for(IAdjacency<T> currentAdjacency: currentVertex.getAdjacencies()){
-                    if(!visited.contains(currentAdjacency.getInformation())){
-                        visited.add(currentAdjacency.getInformation());
-                        System.out.println(currentAdjacency.getInformation());
-                        linkedList.add(currentAdjacency.getVertex());
+                    if(!visited.contains(currentAdjacency.getDestinationInformation())){
+                        visited.add(currentAdjacency.getDestinationInformation());
+                        System.out.println(currentAdjacency.getDestinationInformation());
+                        linkedList.add(currentAdjacency.getDestinationVertex());
                     }
                 }
                 linkedList.poll();

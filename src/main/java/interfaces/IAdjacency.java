@@ -4,12 +4,14 @@ public interface IAdjacency<T>{
 
     //Setters section
     void setLabel(String label);
-    void setVertex(IVertex<T> vertex);
+    void setDestinationVertex(IVertex<T> destinationVertex);
     void setWeight(double weight);
 
     //Getters section
-    T getInformation();
     String getLabel();
-    IVertex<T> getVertex();
+    IVertex<T> getDestinationVertex();
+    T getDestinationInformation();
+    IVertex<T> getSourceVertex();
+    T getSourceVertexInformation();
     double getWeight();
 }

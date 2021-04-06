@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml><graph id="Graph" uidGraph="3" uidEdge="10002"><node positionX="0" positionY="0" id="0" mainText="Rio Branco do Sul" upText="" ></node>
+<node positionX="0" positionY="0" id="1" mainText="Agudos do Sul" upText="" ></node>
+<node positionX="0" positionY="0" id="2" mainText="Pinhais" upText="" ></node>
+<node positionX="0" positionY="0" id="3" mainText="Tijucas do Sul" upText="" ></node>
+<node positionX="0" positionY="0" id="4" mainText="Quitandinha" upText="" ></node>
+<node positionX="0" positionY="0" id="5" mainText="Tunas do Paraná" upText="" ></node>
+<node positionX="0" positionY="0" id="6" mainText="Campo Magro" upText="" ></node>
+<node positionX="0" positionY="0" id="7" mainText="Cerro Azul" upText="" ></node>
+<node positionX="0" positionY="0" id="8" mainText="Campo Largo" upText="" ></node>
+<node positionX="0" positionY="0" id="9" mainText="Curitiba" upText="" ></node>
+<node positionX="0" positionY="0" id="10" mainText="Itaperuçu" upText="" ></node>
+<node positionX="0" positionY="0" id="11" mainText="Campina Grande do Sul" upText="" ></node>
+<node positionX="0" positionY="0" id="12" mainText="Quatro Barras" upText="" ></node>
+<node positionX="0" positionY="0" id="13" mainText="Mandirituba" upText="" ></node>
+<node positionX="0" positionY="0" id="14" mainText="Colombo" upText="" ></node>
+<node positionX="0" positionY="0" id="15" mainText="Piraquara" upText="" ></node>
+<node positionX="0" positionY="0" id="16" mainText="Adrianópolis" upText="" ></node>
+<node positionX="0" positionY="0" id="17" mainText="Lapa" upText="" ></node>
+<node positionX="0" positionY="0" id="18" mainText="Doutor Ulysses" upText="" ></node>
+<node positionX="0" positionY="0" id="19" mainText="Balsa Nova" upText="" ></node>
+<node positionX="0" positionY="0" id="20" mainText="Fazenda Rio Grande" upText="" ></node>
+<node positionX="0" positionY="0" id="21" mainText="Araucária" upText="" ></node>
+<node positionX="0" positionY="0" id="22" mainText="Contenda" upText="" ></node>
+<node positionX="0" positionY="0" id="23" mainText="São José dos Pinhais" upText="" ></node>
+<node positionX="0" positionY="0" id="24" mainText="Bocaiúva do Sul" upText="" ></node>
+<node positionX="0" positionY="0" id="25" mainText="Almirante Tamandaré" upText="" ></node>
+<edge source="0" target="7" isDirect="true" weight="54.5" useWeight="true" id="1000" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="0" target="10" isDirect="true" weight="6.8" useWeight="true" id="1001" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="0" target="14" isDirect="true" weight="31.1" useWeight="true" id="1002" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="0" target="24" isDirect="true" weight="25.1" useWeight="true" id="1003" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="0" target="25" isDirect="true" weight="16.0" useWeight="true" id="1004" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="1" target="13" isDirect="true" weight="27.9" useWeight="true" id="1005" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="1" target="3" isDirect="true" weight="19.6" useWeight="true" id="1006" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="1" target="4" isDirect="true" weight="32.0" useWeight="true" id="1007" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="2" target="9" isDirect="true" weight="8.7" useWeight="true" id="1008" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="2" target="12" isDirect="true" weight="18.5" useWeight="true" id="1009" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="2" target="14" isDirect="true" weight="10.1" useWeight="true" id="1010" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="2" target="15" isDirect="true" weight="15.8" useWeight="true" id="1011" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="3" target="1" isDirect="true" weight="19.6" useWeight="true" id="1012" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="3" target="23" isDirect="true" weight="49.4" useWeight="true" id="1013" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="3" target="13" isDirect="true" weight="47.5" useWeight="true" id="1014" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="4" target="22" isDirect="true" weight="30.5" useWeight="true" id="1015" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="4" target="17" isDirect="true" weight="34.0" useWeight="true" id="1016" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="4" target="1" isDirect="true" weight="32.0" useWeight="true" id="1017" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="4" target="13" isDirect="true" weight="26.3" useWeight="true" id="1018" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="4" target="21" isDirect="true" weight="39.4" useWeight="true" id="1019" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="5" target="16" isDirect="true" weight="54.5" useWeight="true" id="1020" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="5" target="7" isDirect="true" weight="33.9" useWeight="true" id="1021" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="5" target="24" isDirect="true" weight="37.6" useWeight="true" id="1022" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="6" target="8" isDirect="true" weight="20.6" useWeight="true" id="1023" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="6" target="9" isDirect="true" weight="21.8" useWeight="true" id="1024" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="6" target="10" isDirect="true" weight="28.4" useWeight="true" id="1025" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="6" target="25" isDirect="true" weight="19.4" useWeight="true" id="1026" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="7" target="16" isDirect="true" weight="76.9" useWeight="true" id="1027" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="7" target="5" isDirect="true" weight="33.9" useWeight="true" id="1028" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="7" target="0" isDirect="true" weight="54.5" useWeight="true" id="1029" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="7" target="18" isDirect="true" weight="47.8" useWeight="true" id="1030" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="8" target="6" isDirect="true" weight="20.6" useWeight="true" id="1031" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="8" target="9" isDirect="true" weight="29.8" useWeight="true" id="1032" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="8" target="10" isDirect="true" weight="41.6" useWeight="true" id="1033" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="8" target="19" isDirect="true" weight="20.6" useWeight="true" id="1034" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="8" target="21" isDirect="true" weight="26.8" useWeight="true" id="1035" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="6" isDirect="true" weight="21.8" useWeight="true" id="1036" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="8" isDirect="true" weight="29.8" useWeight="true" id="1037" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="23" isDirect="true" weight="15.6" useWeight="true" id="1038" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="2" isDirect="true" weight="8.7" useWeight="true" id="1039" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="20" isDirect="true" weight="30.3" useWeight="true" id="1040" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="14" isDirect="true" weight="12.8" useWeight="true" id="1041" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="15" isDirect="true" weight="22.6" useWeight="true" id="1042" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="21" isDirect="true" weight="28.3" useWeight="true" id="1043" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="9" target="25" isDirect="true" weight="15.4" useWeight="true" id="1044" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="10" target="0" isDirect="true" weight="6.8" useWeight="true" id="1045" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="10" target="6" isDirect="true" weight="28.4" useWeight="true" id="1046" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="10" target="8" isDirect="true" weight="41.6" useWeight="true" id="1047" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="10" target="25" isDirect="true" weight="14.2" useWeight="true" id="1048" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="11" target="12" isDirect="true" weight="34.1" useWeight="true" id="1049" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="11" target="14" isDirect="true" weight="19.9" useWeight="true" id="1050" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="11" target="24" isDirect="true" weight="24.5" useWeight="true" id="1051" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="12" target="2" isDirect="true" weight="18.5" useWeight="true" id="1052" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="12" target="11" isDirect="true" weight="34.1" useWeight="true" id="1053" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="12" target="15" isDirect="true" weight="10.2" useWeight="true" id="1054" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="1" isDirect="true" weight="27.9" useWeight="true" id="1055" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="23" isDirect="true" weight="40.1" useWeight="true" id="1056" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="20" isDirect="true" weight="14.4" useWeight="true" id="1057" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="3" isDirect="true" weight="47.5" useWeight="true" id="1058" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="4" isDirect="true" weight="26.3" useWeight="true" id="1059" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="13" target="21" isDirect="true" weight="31.7" useWeight="true" id="1060" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="0" isDirect="true" weight="31.1" useWeight="true" id="1061" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="9" isDirect="true" weight="12.8" useWeight="true" id="1062" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="11" isDirect="true" weight="19.9" useWeight="true" id="1063" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="2" isDirect="true" weight="10.1" useWeight="true" id="1064" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="24" isDirect="true" weight="25.4" useWeight="true" id="1065" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="14" target="25" isDirect="true" weight="17.7" useWeight="true" id="1066" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="15" target="9" isDirect="true" weight="22.6" useWeight="true" id="1067" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="15" target="23" isDirect="true" weight="21.2" useWeight="true" id="1068" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="15" target="2" isDirect="true" weight="15.8" useWeight="true" id="1069" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="15" target="12" isDirect="true" weight="10.2" useWeight="true" id="1070" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="16" target="5" isDirect="true" weight="54.5" useWeight="true" id="1071" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="16" target="7" isDirect="true" weight="76.9" useWeight="true" id="1072" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="16" target="24" isDirect="true" weight="92.2" useWeight="true" id="1073" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="17" target="22" isDirect="true" weight="26.3" useWeight="true" id="1074" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="17" target="19" isDirect="true" weight="29.6" useWeight="true" id="1075" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="17" target="4" isDirect="true" weight="34.0" useWeight="true" id="1076" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="18" target="7" isDirect="true" weight="47.8" useWeight="true" id="1077" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="19" target="22" isDirect="true" weight="20.9" useWeight="true" id="1078" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="19" target="8" isDirect="true" weight="20.6" useWeight="true" id="1079" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="19" target="17" isDirect="true" weight="29.6" useWeight="true" id="1080" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="19" target="21" isDirect="true" weight="37.4" useWeight="true" id="1081" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="20" target="9" isDirect="true" weight="30.3" useWeight="true" id="1082" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="20" target="23" isDirect="true" weight="25.3" useWeight="true" id="1083" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="20" target="13" isDirect="true" weight="14.4" useWeight="true" id="1084" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="20" target="21" isDirect="true" weight="24.4" useWeight="true" id="1085" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="22" isDirect="true" weight="18.4" useWeight="true" id="1086" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="8" isDirect="true" weight="26.8" useWeight="true" id="1087" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="9" isDirect="true" weight="28.3" useWeight="true" id="1088" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="19" isDirect="true" weight="37.4" useWeight="true" id="1089" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="20" isDirect="true" weight="24.4" useWeight="true" id="1090" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="13" isDirect="true" weight="31.7" useWeight="true" id="1091" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="21" target="4" isDirect="true" weight="39.4" useWeight="true" id="1092" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="22" target="17" isDirect="true" weight="26.3" useWeight="true" id="1093" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="22" target="19" isDirect="true" weight="20.9" useWeight="true" id="1094" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="22" target="4" isDirect="true" weight="30.5" useWeight="true" id="1095" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="22" target="21" isDirect="true" weight="18.4" useWeight="true" id="1096" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="23" target="9" isDirect="true" weight="15.6" useWeight="true" id="1097" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="23" target="20" isDirect="true" weight="25.3" useWeight="true" id="1098" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="23" target="13" isDirect="true" weight="40.1" useWeight="true" id="1099" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="23" target="3" isDirect="true" weight="49.4" useWeight="true" id="1100" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="23" target="15" isDirect="true" weight="21.2" useWeight="true" id="1101" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="24" target="16" isDirect="true" weight="92.2" useWeight="true" id="1102" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="24" target="5" isDirect="true" weight="37.6" useWeight="true" id="1103" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="24" target="0" isDirect="true" weight="25.1" useWeight="true" id="1104" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="24" target="11" isDirect="true" weight="24.5" useWeight="true" id="1105" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="24" target="14" isDirect="true" weight="25.4" useWeight="true" id="1106" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="25" target="0" isDirect="true" weight="16.0" useWeight="true" id="1107" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="25" target="6" isDirect="true" weight="19.4" useWeight="true" id="1108" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="25" target="9" isDirect="true" weight="15.4" useWeight="true" id="1109" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="25" target="10" isDirect="true" weight="14.2" useWeight="true" id="1110" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+<edge source="25" target="14" isDirect="true" weight="17.7" useWeight="true" id="1111" text="" upText="" arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1" ></edge>
+</graph></graphml>

@@ -3,10 +3,13 @@ import exceptions.NoSuchVertexException;
 import exceptions.VertexAlreadyExistsException;
 import graph.Graph;
 import graph.Vertex;
+import heuristic_searches.AStar;
 
 public class Main {
+
     public static void main(String[] args) throws VertexAlreadyExistsException, AdjacencyAlreadyExistsException,
             NoSuchVertexException {
+        ///*
         Graph<String> graph = new Graph<>(false, true);
 
         graph.addVertex("Doutor Ulysses");
@@ -97,11 +100,121 @@ public class Main {
         graph.createAdjacency("Mandirituba",            "Tijucas do Sul",           47.5);
         graph.createAdjacency("Agudos do Sul",          "Tijucas do Sul",           19.6);
 
-        System.out.println(graph.getVertexesSize());
+        //*/
 
-        System.out.println("Search Width: ");
-        graph.searchWidth("Curitiba");
-        System.out.println("Search Depth: ");
-        graph.searchDepth("Curitiba");
+        /*
+        Graph<String> testGraph = new Graph<>(false, true);
+
+        testGraph.addVertex("A");
+        testGraph.addVertex("B");
+        testGraph.addVertex("C");
+        testGraph.addVertex("D");
+        testGraph.addVertex("E");
+        testGraph.addVertex("F");
+        testGraph.addVertex("G");
+        testGraph.addVertex("H");
+        testGraph.addVertex("I");
+        testGraph.addVertex("J");
+        testGraph.addVertex("K");
+        testGraph.addVertex("L");
+        testGraph.addVertex("M");
+        testGraph.addVertex("N");
+        testGraph.addVertex("O");
+
+        testGraph.createAdjacency("A",  "B",  2.0);
+        testGraph.createAdjacency("A",  "C",  2.0);
+        testGraph.createAdjacency("B",  "D",  2.0);
+        testGraph.createAdjacency("B",  "E",  2.0);
+        testGraph.createAdjacency("C",  "F",  2.0);
+        testGraph.createAdjacency("C",  "G",  2.0);
+        testGraph.createAdjacency("D",  "H",  2.0);
+        testGraph.createAdjacency("D",  "I",  2.0);
+        testGraph.createAdjacency("E",  "J",  2.0);
+        testGraph.createAdjacency("E",  "K",  2.0);
+        testGraph.createAdjacency("F",  "L",  2.0);
+        testGraph.createAdjacency("F",  "M",  2.0);
+        testGraph.createAdjacency("G",  "N",  2.0);
+        testGraph.createAdjacency("G",  "O",  2.0);
+
+        System.out.println("Iterativo com 0: ");
+        testGraph.searchIterativeDepth("A", 0);
+        System.out.println("Iterativo com 1: ");
+        testGraph.searchIterativeDepth("A", 1);
+        System.out.println("Iterativo com 2: ");
+        testGraph.searchIterativeDepth("A", 2);
+        System.out.println("Iterativo com 3: ");
+        testGraph.searchIterativeDepth("A", 3);
+        */
+
+        /*
+        Graph<String> testGraphRomenia = new Graph<>(false, true);
+
+        testGraphRomenia.addVertex("Arad");
+        testGraphRomenia.addVertex("Bucharest");
+        testGraphRomenia.addVertex("Craiova");
+        testGraphRomenia.addVertex("Drobeta");
+        testGraphRomenia.addVertex("Eforie");
+        testGraphRomenia.addVertex("Fagaras");
+        testGraphRomenia.addVertex("Giurgiu");
+        testGraphRomenia.addVertex("Hirsova");
+        testGraphRomenia.addVertex("Iasi");
+        testGraphRomenia.addVertex("Lugoj");
+        testGraphRomenia.addVertex("Mehadia");
+        testGraphRomenia.addVertex("Neamt");
+        testGraphRomenia.addVertex("Oradea");
+        testGraphRomenia.addVertex("Pitesti");
+        testGraphRomenia.addVertex("Rimnicu Vilcea");
+        testGraphRomenia.addVertex("Sibiu");
+        testGraphRomenia.addVertex("Timisoara");
+        testGraphRomenia.addVertex("Urziceni");
+        testGraphRomenia.addVertex("Vaslui");
+        testGraphRomenia.addVertex("Zerind");
+
+        testGraphRomenia.createAdjacency("Oradea",          "Zerind",           71.00);
+        testGraphRomenia.createAdjacency("Oradea",          "Sibiu",            151.0);
+        testGraphRomenia.createAdjacency("Zerind",          "Arad",             75.00);
+        testGraphRomenia.createAdjacency("Arad",            "Sibiu",            140.0);
+        testGraphRomenia.createAdjacency("Arad",            "Timisoara",        118.0);
+        testGraphRomenia.createAdjacency("Timisoara",       "Lugoj",            111.0);
+        testGraphRomenia.createAdjacency("Lugoj",           "Mehadia",          70.00);
+        testGraphRomenia.createAdjacency("Mehadia",         "Drobeta",          120.0);
+        testGraphRomenia.createAdjacency("Craiova",         "Rimnicu Vilcea",   146.0);
+        testGraphRomenia.createAdjacency("Craiova",         "Pitesti",          138.0);
+        testGraphRomenia.createAdjacency("Rimnicu Vilcea",  "Sibiu",            80.00);
+        testGraphRomenia.createAdjacency("Rimnicu Vilcea",  "Pitesti",          97.00);
+        testGraphRomenia.createAdjacency("Sibiu",           "Fagaras",          99.00);
+        testGraphRomenia.createAdjacency("Fagaras",         "Bucharest",        211.0);
+        testGraphRomenia.createAdjacency("Pitesti",         "Bucharest",        101.0);
+        testGraphRomenia.createAdjacency("Bucharest",       "Giurgiu",          90.00);
+        testGraphRomenia.createAdjacency("Bucharest",       "Urziceni",         85.00);
+        testGraphRomenia.createAdjacency("Urziceni",        "Hirsova",          98.00);
+        testGraphRomenia.createAdjacency("Hirsova",         "Eforie",           86.00);
+        testGraphRomenia.createAdjacency("Urziceni",        "Vaslui",           142.0);
+        testGraphRomenia.createAdjacency("Vaslui",          "Iasi",             92.00);
+        testGraphRomenia.createAdjacency("Iasi",            "Neamt",            87.00);
+
+        AStar<String> aStar = new AStar<>(testGraphRomenia);
+
+        aStar.addHeuristicValue("Arad",             366.0);
+        aStar.addHeuristicValue("Bucharest",        0.000);
+        aStar.addHeuristicValue("Craiova",          160.0);
+        aStar.addHeuristicValue("Drobeta",          242.0);
+        aStar.addHeuristicValue("Eforie",           161.0);
+        aStar.addHeuristicValue("Fagaras",          176.0);
+        aStar.addHeuristicValue("Giurgiu",          77.00);
+        aStar.addHeuristicValue("Hirsova",          151.0);
+        aStar.addHeuristicValue("Iasi",             226.0);
+        aStar.addHeuristicValue("Lugoj",            244.0);
+        aStar.addHeuristicValue("Mehadia",          241.0);
+        aStar.addHeuristicValue("Neamt",            234.0);
+        aStar.addHeuristicValue("Oradea",           380.0);
+        aStar.addHeuristicValue("Pitesti",          100.0);
+        aStar.addHeuristicValue("Rimnicu Vilcea",   193.0);
+        aStar.addHeuristicValue("Sibiu",            253.0);
+        aStar.addHeuristicValue("Timisoara",        329.0);
+        aStar.addHeuristicValue("Urziceni",         80.00);
+        aStar.addHeuristicValue("Vaslui",           199.0);
+        aStar.addHeuristicValue("Zerind",           374.0);
+        */
     }
 }
