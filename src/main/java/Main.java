@@ -3,7 +3,6 @@ import exceptions.NoSuchVertexException;
 import exceptions.VertexAlreadyExistsException;
 import graph.Graph;
 import graph.Vertex;
-import heuristic_searches.AStar;
 
 public class Main {
 
@@ -100,6 +99,20 @@ public class Main {
         graph.createAdjacency("Mandirituba",            "Tijucas do Sul",           47.5);
         graph.createAdjacency("Agudos do Sul",          "Tijucas do Sul",           19.6);
 
+        System.out.println("Width: ");
+        graph.searchWidth("Curitiba");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+        System.out.println("Depth: ");
+        graph.searchDepth("Curitiba");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+        System.out.println("Limited Depth: ");
+        graph.searchLimitedDepth("Curitiba", "Balsa Nova");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+        System.out.println("Iterative Depth: ");
+        //Nao sei se isso está errado porem ele está fazendo do print ao contrario (curitiba é o ultimo) caso seja basta reverter a lista de resultado :D
+        graph.searchIterativeDepth("Curitiba", 3);
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+
         //*/
 
         /*
@@ -136,6 +149,16 @@ public class Main {
         testGraph.createAdjacency("G",  "N",  2.0);
         testGraph.createAdjacency("G",  "O",  2.0);
 
+        System.out.println("Width: ");
+        testGraph.searchWidth("A");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+        System.out.println("Depth: ");
+        testGraph.searchDepth("A");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+        System.out.println("Limited Depth: ");
+        testGraph.searchLimitedDepth("A", "E");
+        System.out.println("-=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=--=-");
+
         System.out.println("Iterativo com 0: ");
         testGraph.searchIterativeDepth("A", 0);
         System.out.println("Iterativo com 1: ");
@@ -144,6 +167,7 @@ public class Main {
         testGraph.searchIterativeDepth("A", 2);
         System.out.println("Iterativo com 3: ");
         testGraph.searchIterativeDepth("A", 3);
+
         */
 
         /*

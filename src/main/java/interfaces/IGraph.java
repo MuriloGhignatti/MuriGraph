@@ -100,6 +100,10 @@ public interface IGraph<T> {
 
     void searchIterativeDepth(IVertex<T> sourceVertex, int maxDepth);
 
+    void searchLimitedDepth(T sourceVertexInformation, T destinationVertexInformation) throws NoSuchVertexException;
+
+    void searchLimitedDepth(IVertex<T> sourceVertex, IVertex<T> destinationVertex);
+
     void searchWidth(T information) throws NoSuchVertexException;
 
     void searchWidth(IVertex<T> sourceVertex);

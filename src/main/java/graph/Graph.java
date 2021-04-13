@@ -393,6 +393,28 @@ public class Graph<T> implements IGraph<T> {
         searchIterativeDepth(sourceVertex, 0, maxDepth, visited);
     }
 
+    @Override
+    public void searchLimitedDepth(T sourceVertexInformation, T destinationVertexInformation) throws NoSuchVertexException {
+        searchLimitedDepth(getVertex(sourceVertexInformation), getVertex(destinationVertexInformation));
+    }
+
+    @Override
+    public void searchLimitedDepth(IVertex<T> sourceVertex, IVertex<T> destinationVertex) {
+        searchLimitedDepth(sourceVertex, destinationVertex, new HashSet<>());
+    }
+
+    private void searchLimitedDepth(IVertex<T> sourceVertex, IVertex<T> destinationVertex, Set<T> visited){
+        visited.add(sourceVertex.getInformation());
+        System.out.println(sourceVertex.getInformation());
+
+        for(IAdjacency<T> adjacency: sourceVertex.getAdjacencies()){
+            if(visited.contains(destinationVertex.getInformation()))
+                return;
+            if(!visited.contains(adjacency.getDestinationInformation()))
+                searchLimitedDepth(adjacency.getDestinationVertex(), destinationVertex, visited);
+        }
+    }
+
     private void searchIterativeDepth(IVertex<T> sourceVertex, int currentDepth, int maxDepth, Set<T> visited){
         visited.add(sourceVertex.getInformation());
         if(currentDepth != maxDepth){
