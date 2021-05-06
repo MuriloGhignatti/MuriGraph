@@ -1,8 +1,6 @@
 package heuristic_searches;
 
-import exceptions.NoSuchVertexException;
 import exceptions.VertexAlreadyExistsException;
-import interfaces.IAdjacency;
 import interfaces.IGraph;
 import interfaces.IVertex;
 
