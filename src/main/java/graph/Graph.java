@@ -86,14 +86,20 @@ public class Graph<T> implements IGraph<T> {
 
     @Override
     public void addVertex(T information) throws VertexAlreadyExistsException {
+        addVertex(information, "");
+    }
+
+    @Override
+    public void addVertex(T information, String label) throws VertexAlreadyExistsException {
         if(existVertex(information)){
             StringBuilder errorMessageStringBuilder = new StringBuilder("Vertex ");
             errorMessageStringBuilder.append(information);
             errorMessageStringBuilder.append(" already exists in the graph");
             throw new VertexAlreadyExistsException(errorMessageStringBuilder.toString());
         }
-        vertexes.put(information, new Vertex<>(information));
+        vertexes.put(information, new Vertex<>(information, label));
     }
+        
 
     @Override
     public void addVertex(IVertex<T> vertex) throws VertexAlreadyExistsException {

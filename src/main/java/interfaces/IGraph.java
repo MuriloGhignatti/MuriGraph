@@ -30,6 +30,8 @@ public interface IGraph<T> {
 
     void addVertex(T information) throws VertexAlreadyExistsException;
 
+    void addVertex(T information, String label) throws VertexAlreadyExistsException;
+
     void addVertex(IVertex<T> vertex) throws VertexAlreadyExistsException;
 
     double[][] getAdjacencyMatrix();
